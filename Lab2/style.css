@@ -1,0 +1,131 @@
+.student-form {
+  background-color: rgb(169, 169, 249);
+  color: white;
+  margin: 5rem auto;
+  padding: 1em;
+  width: 50%;
+  border: 3px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.student-header {
+  padding: 20px;
+  text-align: center;
+}
+
+.student-field {
+  padding: 20px;
+  border: 0;
+}
+
+.student-footer {
+  padding: 20px;
+  text-align: center;
+}
+
+#submit-btn {
+  color: #333;
+  background-color: white;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.student-field label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.survey-form input[type="radio"] {
+  padding: 20px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.comment-section {
+  width: 50%;
+  background-image: url("./iStock_Comment-600x479.jpg");
+  background-size: cover;
+  margin: 50px auto;
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 20px;
+}
+.comment-form section {
+  display: flex;
+  align-items: center;
+}
+
+.comment-form section label {
+  margin-right: 15px;
+}
+.comment-form section textarea {
+  margin-bottom: 15px;
+}
+
+.comment-form textarea {
+  padding: 8px;
+}
+
+.btn-comment {
+  color: #333;
+  background-color: rgb(179, 157, 238);
+  padding: 5px;
+  border: 2px solid rgb(122, 220, 184);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.user-form {
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: rgb(210, 243, 211);
+  color: #333;
+}
+
+.user-form-field {
+  border: 0;
+  padding: 20px;
+}
+
+.user-header {
+  color: rgb(184, 182, 182);
+  text-align: center;
+}
+
+.user-form-field label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.box1 {
+  background-color: yellow;
+  width: 100px;
+  height: 50px;
+  margin: 50px;
+  padding: 20px;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.box2 {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  padding: 30px;
+  border: 2px dashed yellow;
+  box-sizing: content-box;
+}
+
+.box3 {
+  background-color: red;
+  width: 300px;
+  height: 150px;
+  margin: 15px;
+  padding: 25px;
+  border: 10px solid green;
+  box-sizing: border-box;
+}

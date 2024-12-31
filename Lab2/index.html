@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Exercise 1 and 8-->
+  <header class="user-header">
+    <h1>Take user data</h1>
+  </header>
+  <main>
+    <form class="user-form" method="get">
+      <fieldset class="user-form-field">
+        <label for="fname">First Name:</label>
+        <br>
+        <input type="text" id="fname" name="fname" value="firstName">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <label for="password">Password</label>
+        <br>
+        <input type="password" id="password" name="password">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <label for="confirmPassword">confirm Password</label>
+        <br>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <label for="phone">Phone Number</label>
+        <br>
+        <input type="tel" id="phone" name="phone" value="+20-xx-xxxx-xxxx
+        ">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <label for="gender">Gender</label>
+        <br>
+        <label for="male">male</label>
+        <input type="radio" name="gender" value="male">
+        <label for="female">female</label>
+        <input type="radio" name="gender" value="female">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <label for="DOB">Date of Birth</label>
+        <br>
+        <input type="date" id="DOB" name="DOB">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <p>Do you like this lab ?</p>
+        <label for="yes">Yes</label>
+        <input type="radio" name="like" value="yes" checked>
+        <label for="no">No</label>
+        <input type="radio" name="like" value="no">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <p>Rate our Session: </p>
+        <input type="range" step="10" min="0" max="100" value="50" name="rating">
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <p> Favorite Color: </p>
+        <select name="colors" id="colors">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+        </select>
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <p>Feedback</p>
+        <textarea name="feedback" id="feedback"></textarea>
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <label for="file">Upload Resume</label>
+        <input type="file" id="file">
+        <br>
+      </fieldset>
+
+      <fieldset class="user-form-field">
+        <p>Choose your Favorite languages</p>
+        <label><input type="checkbox" name="language" value="Arabic">Arabic</label>
+        <label>
+          <br>
+          <input type="checkbox" name="language" value="English">English</label>
+        <br>
+        <label><input type="checkbox" name="language" value="Spanish">Spanish</label>
+        <br>
+        <label><input type="checkbox" name="language" value="French">French</label>
+        <br>
+      </fieldset>
+      <fieldset class="user-form-field">
+        <input type="hidden" name="key" id="key" value="12345">
+        <br>
+        <input type="submit" value="submit">
+      </fieldset>
+
+    </form>
+  </main>
+
+  <!-- Exercise 2 - 3 - 4 - 5 -->
+  <form class="student-form">
+    <header class="student-header">
+      <h1>Register Student data</h1>
+    </header>
+    <main>
+
+      <fieldset class="student-field">
+        <label for="name">Name</label>
+        <br>
+        <input type="text" id="name" name="name">
+      </fieldset>
+      <br>
+      <fieldset class="student-field">
+        <label for="email">Email</label>
+        <br>
+        <input type="email" id="email" name="email">
+      </fieldset>
+      <br>
+      <fieldset class="student-field">
+        <label for="password">Password</label>
+        <br>
+        <input type="password" id="password" name="password">
+      </fieldset>
+      <br>
+      <fieldset class="student-field">
+        <label for="cpassword">Confirm Password</label>
+        <br>
+        <input type="password" id="password" name="password">
+      </fieldset>
+      <br>
+      <fieldset class="student-field">
+        <button type="submit" id="submit-btn">Register</button>
+      </fieldset>
+
+    </main>
+    <footer class="student-footer">
+      <p>
+        By submit the form you accept The
+        <a href="https://policies.google.com/terms?hl=en-US">Terms and Conditions
+        </a>
+      </p>
+    </footer>
+  </form>
+  <!-- Exercise 6 -->
+  <form class="survey-form">
+    <header>
+      <h1>Survey Form</h1>
+    </header>
+    <main>
+      <section>
+        <p>How did you know our website ?</p>
+        <select name="know" id="know">
+          <option value="FaceBook">FaceBook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Friend">Friend</option>
+        </select>
+      </section>
+      <section>
+        <p>What's feature you like in our website ? </p>
+        <select name="like" id="like">
+          <option value="Fast">Fast</option>
+          <option value="very responsive">very responsive</option>
+          <option value="Easy to deal with">Easy to deal with</option>
+        </select>
+      </section>
+      <section>
+        <p>Would you recommend our website to your friends?</p>
+        <input type="radio" value="definitely" name="recommend">
+        <label for="definitely">Definitely</label>
+        <input type="radio" value="maybe" name="recommend">
+        <label for="maybe">May be</label>
+        <input type="radio" value="notSure" name="recommend">
+        <label for="notSure">Not sure</label>
+      </section>
+    </main>
+  </form>
+  <!-- Exercise 7 -->
+
+  <article class="comment-section">
+    <form class="comment-form">
+      <section>
+        <label for="comment">Add comment 1</label>
+        <textarea name="comment" id="comment"></textarea>
+      </section>
+      <section>
+        <label for="comment">Add comment 2</label>
+        <textarea name="comment" id="comment"></textarea>
+      </section>
+      <section>
+        <label for="comment">Add comment 3</label>
+        <textarea name="comment" id="comment"></textarea>
+      </section>
+      <button class="btn-comment" type="submit" value="submit">Submit</button>
+    </form>
+  </article>
+
+  <!-- Exercise 9 -->
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  we can say that in case border-box it subtracts the width from padding and border and in case content-box he keep the
+  width and add padding and border to it
+</body>
+
+</html>
