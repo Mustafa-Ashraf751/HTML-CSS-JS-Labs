@@ -103,8 +103,8 @@ var startTheGame = function () {
 
     lives.textContent = loseCount;
     var result = document.createElement("div");
-    console.log(i);
-    if (loseCount === 0 || i === 0) {
+    result.classList.add("result-div");
+    if (loseCount === 0) {
       result.style.color = "red";
       result.textContent = "Sorry you lost!";
       document.querySelector(".result").appendChild(result);
@@ -147,6 +147,8 @@ var reset = function () {
     btn.removeAttribute("disabled");
     btn.removeEventListener("click", startOrReset);
   });
+  //remove the paragraph of the result
+  document.querySelector(".result-div").remove();
 };
 
 var startOrReset = function () {
