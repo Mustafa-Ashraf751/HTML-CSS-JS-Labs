@@ -1,83 +1,33 @@
-//Category Birds
-var birds = ["Eagle", "Penguin", "Parrot", "Flamingo", "Sparrow"];
-//Category Foods
-var foods = ["Pizza", "Sushi", "Taco", "Pasta", "Burger"];
-//Category Country
-var countries = ["Canada", "Brazil", "Japan", "France", "Egypt"];
 /****************************************** */
 //Insert the letter into the letters container
-var letterContainer = document.querySelector(".letters");
-for (var i = 65; i <= 90; i++) {
-  var letter = String.fromCharCode(i);
-  var button = document.createElement("button");
-  button.textContent = letter;
-  button.classList.add("letter-btn");
-  button.setAttribute("value", letter.toLowerCase());
-  letterContainer.appendChild(button);
-}
 
-//Function to return random word
-var randomWord = function (category) {
-  switch (category) {
-    case "birds":
-      return birds[Math.floor(Math.random() * 5)];
-    case "foods":
-      return foods[Math.floor(Math.random() * 5)];
-    case "countries":
-      return countries[Math.floor(Math.random() * 5)];
-  }
-};
+import { insertLetters } from "./insertLetters.js";
 
-//Create function to show that game start
-var gameStart = function (word) {
-  var letters = word.split("");
-  var lettersContainer = document.querySelector(".show-letters");
-  for (var i = 0; i < letters.length; i++) {
-    var spanLetter = document.createElement("span");
-    spanLetter.classList.add("btn-style");
-    spanLetter.classList.add("hide-letter");
-    spanLetter.textContent = letters[i];
-    lettersContainer.appendChild(spanLetter);
-  }
-};
+insertLetters();
+
+//Create function to return random words
+import { returnRandomWord } from "./returnRandom.js";
+
+//Create function to initialize the game and hide the letters
+import { initializeGame } from "./initializeGame.js";
 
 //Show the UI and start the timer functions
-var interval;
-var number = document.querySelector(".timer-number");
-var i = 30;
-function startTimer() {
-  interval = setInterval(function () {
-    number.textContent = i;
-    i--;
-    var result = document.createElement("div");
-    if (i === -1) {
-      result.style.color = "red";
-      result.textContent = "Sorry you lost!";
-      document.querySelector(".result").appendChild(result);
-      clearInterval(interval);
-      document.querySelectorAll(".letter-btn").forEach(function (btn) {
-        btn.removeEventListener("click", startOrReset);
-      });
-    }
-  }, 1000);
-}
-
-var showUI = function () {
-  document.querySelector(".show-timer").classList.remove("hide-div");
-  document.querySelector(".result").classList.remove("hide-div");
-  startTimer();
-};
+import { interval, startTimer, stopTimer, showUI } from "./startTimerShowUI.js";
 
 //create a function to start the game
 var gameStarted = false;
 var loseCount = 6;
 var lives = document.querySelector(".tries-no");
 var startTheGame = function () {
-  gameStarted = true;
-  var choosenCategory = document.getElementById("cate");
-  var returnedWord = randomWord(choosenCategory.value);
-  gameStart(returnedWord);
   var foundLetters = 0;
+  gameStarted = true;
+
+  var choosenCategory = document.getElementById("cate");
+
+  var returnedWord = returnRandomWord(choosenCategory.value);
+
+  initializeGame(returnedWord);
+
   function listener(event) {
     var userChoice = event.target.getAttribute("value");
     event.target.disabled = true;
@@ -94,7 +44,6 @@ var startTheGame = function () {
       var lettersContainer = document.querySelector(".show-letters");
       foundLetters++;
       clearInterval(interval);
-      i = 30;
       startTimer();
       lettersContainer
         .querySelector(`:nth-child(${element[1] + 1})`)
@@ -135,10 +84,12 @@ var reset = function () {
   spans.forEach(function (span) {
     span.remove();
   });
+
   //reset Time
   clearInterval(interval);
-  i = 30;
-  document.querySelector(".timer-number").textContent = i;
+  stopTimer();
+  document.querySelector(".timer-number").textContent = 30;
+
   //reset lives
   loseCount = 6;
   document.querySelector(".tries-no").textContent = 6;
@@ -147,6 +98,7 @@ var reset = function () {
     btn.removeAttribute("disabled");
     btn.removeEventListener("click", startOrReset);
   });
+
   //remove the paragraph of the result
   document.querySelector(".result-div").remove();
 };
